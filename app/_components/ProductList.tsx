@@ -34,11 +34,13 @@ const ProductList = () => {
                 <AvatarFallback>{shot.name.slice(0, 2)}</AvatarFallback>
               </Avatar>
               <div>
-                <CardTitle>{shot.name}</CardTitle>
-                <CardDescription>0.60 mm to 3.17 mm</CardDescription>
+                <CardTitle className=" text-left">{shot.name}</CardTitle>
+                <CardDescription className=" text-left">
+                  0.60 mm to 3.17 mm
+                </CardDescription>
               </div>
             </CardHeader>
-            <CardContent>{shot.description}</CardContent>
+            <CardContent className=" text-sm">{shot.description}</CardContent>
           </Card>
         ))}
       </div>

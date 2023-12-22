@@ -22,12 +22,9 @@ const ProductList = () => {
   return (
     <div className="py-12 text-center">
       <h1 className=" text-4xl font-bold text-[#D41958]">Products We Make</h1>
-      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+      <div className=" w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
         {shotsdata.map((shot: shotType) => (
-          <Card
-            key={shot.id}
-            className=" w-[280px] sm:w-[300px] lg:w-[350px] mx-auto"
-          >
+          <Card key={shot.id} className=" w-[280px] sm:w-[300px] mx-auto">
             <CardHeader className=" flex flex-row items-center gap-4">
               <Avatar className=" w-[50px] h-[50px]">
                 <AvatarImage src={`images/${shot.image}`} />

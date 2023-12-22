@@ -41,4 +41,18 @@ export const shotsdata = [
     description:
       "Steel shot is spherical metallic abrasive produced by the molten steel by means of atomizing process. Metalworking industries are the main users of steel shots ferrous and non-ferrous foundries, forge shops and the metal fabricators",
   },
+  {
+    id: "7",
+    name: "Zinc Cut Wire Shot",
+    image: "zinc-cut-wire-shot.jpg",
+    description:
+      "We offer high-quality Zinc Cut Wire Shots made from premium zinc, ideal for shot blasting and paint removal processes. These wire pellets, softer than stainless steel or cast alternatives, reduce equipment wear. Available in various sizes and conditioning, they excel in sand removal, deburring, and deflashing of non-ferrous materials. Additionally, they provide temporary corrosion protection and a satin finish, perfect for aluminum and zinc castings.",
+  },
+  {
+    id: "8",
+    name: "Stainless Steel Cut Wire Shot",
+    image: "Stainless-Steel-Cut-Wire-Shot.jpg",
+    description:
+      "Stainless steel cut wire shot with bright surface that are used for shot blasting, shot peering and deburring in non-ferrous metal and stainless steel products surface. The surface of work-pieces are smooth, no rust and highlight metallic luster after process.",
+  },
 ];

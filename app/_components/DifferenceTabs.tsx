@@ -4,12 +4,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const DifferenceTabs = () => {
   return (
     <div>
-      <Tabs defaultValue="cut-wire-steel-shots" className="w-[400px]">
+      <Tabs
+        defaultValue="cut-wire-steel-shots"
+        className=" w-[280px] md:w-[400px]"
+      >
         <TabsList className=" bg-gray-300 py-2 w-full">
-          <TabsTrigger value="cast-steel-shots" className="">
+          <TabsTrigger
+            value="cast-steel-shots"
+            className="text-xs md:text-base"
+          >
             Cast Steel Shots{" "}
           </TabsTrigger>
-          <TabsTrigger value="cut-wire-steel-shots" className="">
+          <TabsTrigger
+            value="cut-wire-steel-shots"
+            className="text-xs md:text-base"
+          >
             Cut Wire Steel Shots{" "}
           </TabsTrigger>
         </TabsList>

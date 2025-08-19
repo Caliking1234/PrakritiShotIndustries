@@ -1,117 +1,72 @@
+"use client";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CheckCircle, XCircle } from "lucide-react";
+import { motion } from "framer-motion";
+
+const Point = ({ text, type }: { text: string; type: "good" | "bad" }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: type === "good" ? -20 : 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4 }}
+      className={`flex items-start gap-2 p-2 rounded-lg shadow-sm ${
+        type === "good" ? "bg-green-50" : "bg-red-50"
+      }`}
+    >
+      {type === "good" ? (
+        <CheckCircle className="text-green-600 w-4 h-4 mt-1" />
+      ) : (
+        <XCircle className="text-red-600 w-4 h-4 mt-1" />
+      )}
+      <p className="text-sm text-gray-700">{text}</p>
+    </motion.div>
+  );
+};
 
 const DifferenceTabs = () => {
   return (
-    <div>
-      <Tabs
-        defaultValue="cut-wire-steel-shots"
-        className=" w-[280px] md:w-[400px]"
-      >
-        <TabsList className=" bg-gray-300 py-2 w-full">
+    <div className="w-full md:w-[500px]">
+      <Tabs defaultValue="cut-wire-steel-shots" className="w-full">
+        
+        <TabsList className="flex justify-around bg-gray-100 rounded-lg p-2 mb-4 shadow-sm">
           <TabsTrigger
             value="cast-steel-shots"
-            className="text-xs md:text-base"
+            className="px-4 py-2 rounded-md data-[state=active]:bg-red-600 data-[state=active]:text-white"
           >
-            Cast Steel Shots{" "}
+            Cast Steel Shots
           </TabsTrigger>
           <TabsTrigger
             value="cut-wire-steel-shots"
-            className="text-xs md:text-base"
+            className="px-4 py-2 rounded-md data-[state=active]:bg-green-600 data-[state=active]:text-white"
           >
-            Cut Wire Steel Shots{" "}
+            Cut Wire Steel Shots
           </TabsTrigger>
         </TabsList>
-        <TabsContent
-          value="cast-steel-shots"
-          className=" flex flex-col gap-y-2"
-        >
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Basic row material is far lower in physical properties &
-            composition. This cause BLOW HOLES, POROSITY & SHRINKAGE, which
-            makes the shot, fracture into small particles.{" "}
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Grain size of cast shot is Unstabilized
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Shots being produced are of mixed size, hence product is a mix of
-            various spherical sizes
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Hardness Variation is large
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            In Micro-structure carbide always there
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Steel shots break in to dust
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Higher consumptio requires high inventory, more money & space as
-            well
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Shots consumption is higher
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Increases working cycle time, due to higher consumption in shot
-            blasting/penning
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            No consistency in performance, due to fast deterioration in size
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Less usages life
-          </p>
-          <p className="text-sm text-[#576983] p-2 bg-white rounded-sm">
-            Lower purchase price
-          </p>
+
+        
+        <TabsContent value="cast-steel-shots" className="flex flex-col gap-2">
+          <Point text="Basic raw material has lower physical properties & composition" type="bad" />
+          <Point text="Blow holes, porosity & shrinkage cause breakage" type="bad" />
+          <Point text="Grain size is unstabilized" type="bad" />
+          <Point text="Hardness variation is large" type="bad" />
+          <Point text="Shots break into dust, short lifespan" type="bad" />
+          <Point text="Higher consumption → more cost & inventory" type="bad" />
+          <Point text="Inconsistent performance due to deterioration" type="bad" />
+          <Point text="Lower purchase price (but costly in long run)" type="good" />
         </TabsContent>
-        <TabsContent
-          value="cut-wire-steel-shots"
-          className=" flex flex-col gap-y-2"
-        >
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Raw material is of EXACT composition without any material defect or
-            HOLES & POROSITY
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            its drawing process, the grain size is Stabilized
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            All cut wire shots being of same wire, hence are Identical
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Uniform hardness
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Micro-Structure is only Tempered Marten site
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            In Micro-structure carbide always there
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Cut wire shots only wear down
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Lower inventory requires, for the same job
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Less consumption than cast shots{" "}
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Reduce time for shot blasting/penning
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Consistent performance p-2 bg-white rounded-sm
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Usages life 2-3 times more
-          </p>
-          <p className="text-sm text-[#576983] bg-white p-2 rounded-sm">
-            Higher purchase price
-          </p>
+
+        
+        <TabsContent value="cut-wire-steel-shots" className="flex flex-col gap-2">
+          <Point text="Raw material is defect-free (no holes/porosity)" type="good" />
+          <Point text="Grain size stabilized due to drawing process" type="good" />
+          <Point text="All shots are identical & uniform hardness" type="good" />
+          <Point text="Micro-structure: only tempered martensite" type="good" />
+          <Point text="Only wear down, not break into dust" type="good" />
+          <Point text="Less consumption → lower inventory cost" type="good" />
+          <Point text="Consistent performance" type="good" />
+          <Point text="2–3x longer lifespan" type="good" />
+          <Point text="Higher purchase price (but economical in long run)" type="bad" />
         </TabsContent>
       </Tabs>
     </div>

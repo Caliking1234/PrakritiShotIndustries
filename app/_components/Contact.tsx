@@ -63,7 +63,7 @@ const Contact = () => {
                   </svg>
 
                   <p className=" sm:px-1 text-xs flex flex-col">
-                    <span className=" text-xs sm:text-sm">our location :-</span>
+                    <span className=" text-xs sm:text-sm">Our location :-</span>
                     <span>
                       KH No. 451, Nandgram, Sihani Road, Ghaziabad-201003
                     </span>
